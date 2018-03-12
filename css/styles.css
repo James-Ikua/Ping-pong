@@ -1,0 +1,24 @@
+body {
+  background-image: url(../images/img2.jpeg);
+}
+
+h1 {
+  text-align: center;
+  color: magenta;
+}
+
+ h2, h3, h4 {
+    padding: 0%;
+    text-align: left;
+    color: red;
+  }
+
+h5, h6 {
+  color: magenta
+}
+
+p1 {
+  padding: 0%;
+  text-align: left;
+  color: red;
+}
