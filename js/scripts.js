@@ -58,4 +58,3 @@ var result = pingpong(value);
 $("#result").show();
 })
 })
->>>>>>> bdbd0c9a2aaa2d0d6649cf451fa8f9609caf0187
