@@ -39,6 +39,20 @@
 
         </div>
 
+        <card-interactions class="card-element" ng-repeat="element in myIndex.feed">
+  <label class="rating-upvote">
+    <input type="checkbox" ng-click="rate('upvote', u[element.id])" ng-true-value="1" ng-false-value="0" ng-model="u[element.id]" ng-init="element.user_actions.voted === 'upvoted' ? u[element.id] = 1 : u[element.id] = 0" />
+    <ng-include src="'upvote.svg'"></ng-include>
+    {{ element.upvotes + u[1] }}
+  </label>
+  <label class="rating-downvote">
+    <input type="checkbox" ng-click="rate('downvote', d[element.id])" ng-model="d[element.id]" ng-true-value="1" ng-false-value="0" ng-init="element.user_actions.voted === 'downvoted' ? d[element.id] = 1 : d[element.id] = 0" />
+    <ng-include src="'downvote.svg'"></ng-include>
+    {{ element.downvotes + d[1] }}
+  </label>
+  <hr>
+</card-interactions>
+
   </body>
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/scripts.js"></script>

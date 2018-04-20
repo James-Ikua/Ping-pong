@@ -58,3 +58,48 @@ var result = pingpong(value);
 $("#result").show();
 })
 })
+
+
+'use strict';
+
+var index = angular.module('app.index', ['index.factory']);
+
+index.controller('indexController', ['indexFactory', function (indexFactory) {
+
+    var data = this;
+
+    data.functions = {
+      getFeed: function () {
+        indexFactory.getJSON(function (response) {
+          data.feed = response.index;
+        });
+      }
+    };
+
+    this.functions.getFeed();
+  }
+
+]);
+
+index.directive('cardInteractions', [ function () {
+  return {
+    restrict: 'E',
+    link: function (scope, element, attrs) {
+      scope.rate = function(action, value) {
+        var check_up = element.find('input')[0];
+        var check_down = element.find('input')[1];
+        if (action === 'upvote') {
+          if (check_down.checked === true) {
+              check_down.checked = false;
+          }
+        } else {
+          if (action === 'downvote') {
+            if (check_up.checked === true) {
+              check_up.checked = false;
+            }
+          }
+        }
+      }
+    }
+  };
+}]);
