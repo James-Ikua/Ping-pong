@@ -2,8 +2,13 @@
 
 var answer = function(display) {
 for (i=1; i<=display; i++) {
+  // if the number is divisible by 15, write "pingpong"
+if (i % 15 === 0) {
+  $(".number").append("<li>"+"pingpong"+ "</>")
+    //Return "pingpong";
+}
 // if the number is divisible by 3, write "ping"
-if (i % 3 === 0) {
+else if (i % 3 === 0) {
   console.log("pingpong")
 $(".number").append("<li>"+"ping"+ "</>")
 //Return "ping";
@@ -12,11 +17,6 @@ $(".number").append("<li>"+"ping"+ "</>")
 else if (i % 5 === 0) {
 $(".number").append("<li>"+"pong"+ "</>")
   //Return "pong";
-}
-// if the number is divisible by 15, write "pingpong"
-else if (i % 15 === 0) {
-  $(".number").append("<li>"+"pingpong"+ "</>")
-    //Return "pingpong";
 }
 else {
   console.log("Walker");
@@ -38,12 +38,12 @@ $("#result").text(result);
 // business logic
 var pingpong = function(value) {
 for (var i=0; i<=30; i++) {
-if (i % 3 === 0) {
+ if (i % 15 === 0) {
+  return "PingPong";
+ }else if (i % 3 === 0) {
   return "Ping";
 } else if (i % 5 === 0) {
   return "Pong";
-} else if (i % 15 === 0) {
-  return "PingPong";
 }
 }
 };
